@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package YourPackage;
+
+service YourService {
+  rpc Ask (Question) returns (Answer);
+}
+
+message Question {
+  string text = 1;
+  string username =2;
+}
+
+message Answer {
+  string answer = 1;
+  string model = 2;
+  int32 status = 3;
+}
