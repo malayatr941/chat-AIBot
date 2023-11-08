@@ -15,12 +15,13 @@ class originMiddle {
                 if (err) {
                   throw "Invalid token, authorization failed"
                 }
-                let result = true;
-                result = user.domain == domain || domain == '::1';
-                
-                if(!result){
-                   throw "Domain not registered";
-                }
+                //let result = true;
+                //result = user.domain == domain || domain == '::1';
+                console.log(user.domain,"Token");
+                console.log(domain,"user IP");
+                // if(!result){
+                //    throw "Domain not registered";
+                // }
                 return next();
             });
         } catch (error) {

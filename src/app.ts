@@ -3,6 +3,7 @@ import * as cors from 'cors';
 import * as express from 'express';
 import { Request, Response } from 'express';
 import { Controller } from './interfaces';
+import { kafka } from './helpers/kafka/intialise';
 
 class App {
    public app: express.Application;
@@ -11,6 +12,7 @@ class App {
       this.app = express();
       this.initializeMiddlewares();
       this.initializeControllers(controllers);
+      kafka
    }
 
    public listen() {
